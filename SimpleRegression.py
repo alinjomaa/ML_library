@@ -25,19 +25,3 @@ class SimpleLinearRegression:
         return y
 
 
-x_data = [1, 2, 3, 4, 5]
-y_data = [2, 4, 6, 8, 10]
-
-
-model = SimpleLinearRegression(x_data, y_data)
-
-
-b0_fitted, b1_fitted = model.fit(x_data, y_data)
-
-
-print(f"Fitted coefficients: b0 (intercept) = {b0_fitted}, b1 (slope) = {b1_fitted}")
-
-
-x_new_value = 6
-prediction = model.predict(b0_fitted, b1_fitted, x_new_value)
-print(f"Prediction for x = {x_new_value}: y = {prediction}")

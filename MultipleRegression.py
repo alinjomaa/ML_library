@@ -27,25 +27,6 @@ class MultipleLinearRegression:
         return np.dot(x_new, beta)
 
 
-x_data = [
-    [1500, 3, 5],
-    [2000, 4, 2],
-    [800, 1, 15],
-    [1200, 2, 10]
-]
-y_data = [300000, 450000, 150000, 220000]
-
-
-
-model = MultipleLinearRegression(x_data, y_data)
-
-
-b_fitted = model.fit()
-
-x_new_value= [1800, 3, 7] 
-prediction = model.predict(b_fitted, x_new_value)
-print(f"Prediction for x = {x_new_value}: y = {prediction}")
-
 
 
 
