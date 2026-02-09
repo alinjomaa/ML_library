@@ -4,16 +4,16 @@ class SimpleLinearRegression:
         self.x_data = x_data
         self.y_data = y_data
 
-    def fit(self, x_data, y_data):
-        y_bar = sum(y_data) / len(y_data)
-        x_bar = sum(x_data) / len(x_data)
+    def fit(self):
+        y_bar = sum(self.y_data) / len(self.y_data)
+        x_bar = sum(self.x_data) / len(self.x_data)
 
         numerator = 0
         denominator = 0
 
-        for i in range(len(x_data)):
-            numerator += (x_data[i] - x_bar) * (y_data[i] - y_bar) # for each point i, it preforms this calculation and adds it to the numerator set above 
-            denominator += (x_data[i] - x_bar) ** 2
+        for i in range(len(self.x_data)):
+            numerator += (self.x_data[i] - x_bar) * (self.y_data[i] - y_bar) # for each point i, it preforms this calculation and adds it to the numerator set above 
+            denominator += (self.x_data[i] - x_bar) ** 2
 
         b1 = numerator / denominator
         b0 = y_bar - b1 * x_bar
@@ -23,5 +23,6 @@ class SimpleLinearRegression:
     def predict(self, b0, b1, x_new):
         y = b0 + b1 * x_new
         return y
+
 
 
